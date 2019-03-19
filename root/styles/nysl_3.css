@@ -34,7 +34,6 @@ header h1 {
   top: 85%;
 
   margin: 0;
-  padding: 0;
   padding-left: 10px;
 
   color: white;
@@ -110,6 +109,35 @@ nav a.current:hover {
   z-index: 1;
 }
 
+.page_description {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+
+  padding: 5px;
+
+  display: block;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 5px;
+  border-color: white;
+}
+
+.page_description h2,
+.page_description p {
+  display: block;
+
+  color: whitesmoke;
+  text-shadow: 0px 2px 5px black;
+  text-align: center;
+
+  font-weight: bold;
+}
+
 section {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -138,6 +166,40 @@ article {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+th:first-child,
+th:last-child {
+  border-radius: 5px;
+}
+
+td:first-child {}
+
+td:last-child {}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  border-style: solid;
+}
+
+th {
+  text-decoration: underline;
+}
+
+.sideBySide {
+  display: flex;
+  align-content: space-between;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
 time {
   font-style: italic;
   font-weight: bold;
@@ -148,4 +210,8 @@ p {
   padding-left: 2.5%;
 
   text-align: justify;
+}
+
+.tip {
+  font-weight: bold;
 }
