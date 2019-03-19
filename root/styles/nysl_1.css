@@ -1,0 +1,174 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-color: seagreen;
+  font-family: sans-serif;
+}
+
+header {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 35%;
+
+  background-image: url("../assets/design1_image1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+
+  font-size: 2em;
+
+  color: white;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0.5em;
+  width: 100%;
+
+  align-content: center;
+
+  font-weight: bolder;
+  font-size: 1.5em;
+
+  text-align: center;
+
+  color: white;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+  background-image: linear-gradient(to right, green, greenyellow);
+
+  border-style: solid;
+  border-color: black;
+  border-width: 0;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+}
+
+.logo {
+  position: absolute;
+
+  right: 10vw;
+  top: 32.5%;
+
+  width: 100px;
+  height: 100px;
+
+  background-image: url("../assets/nysl_logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px 1px 0 black) drop-shadow(1px -1px 0 black) drop-shadow(-1px -1px 0 black) drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+
+  z-index: 1;
+}
+
+nav {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  display: inline-block;
+
+  padding: 5px;
+
+  width: 15%;
+
+  float: left;
+  clear: left;
+
+  overflow: hidden;
+}
+
+nav ul {
+  display: block;
+  width: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+
+  margin: 0;
+  padding: 10px;
+}
+
+nav a {
+  font-size: 1em;
+  font-weight: bold;
+
+  color: white;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: limegreen;
+}
+
+nav a.current,
+nav a.current:hover {
+  color: greenyellow;
+}
+
+section {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  display: inline-block;
+
+  width: 85%;
+
+  padding: 1.5%;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+article {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  border-radius: 5px;
+
+  background-color: ghostwhite;
+
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+time {
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+}
+
+p {
+  padding-left: 2.5%;
+
+  text-align: justify;
+}
