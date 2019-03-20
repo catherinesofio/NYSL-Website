@@ -178,8 +178,8 @@ td:last-child {}
 table,
 th,
 td {
+	align-content: center;
   border-collapse: collapse;
-  border-style: solid;
 }
 
 th {
