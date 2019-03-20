@@ -28,125 +28,118 @@
 
 	<section>
 		<article>
-			<form>
+			<form action="../root/show_data.html" method="get">
 				<fieldset>
-					<label>
-						Player’s First Name
-						<input type="text">
-					</label>
+					Player’s First Name <input type="text" name="first_name">
+					Last Name <input type="t" name="last_name"><br>
 
-					<label>
-						Last Name
-						<input type="text">
-					</label>
+					Street Address <input type="text" name="street_address"><br>
 
-					<label>
-						Street Address
-						<input type="text">
-					</label>
+					City <input type="text" name="city">
+					Zip Code <input type="text" name="zip_code"><br>
 
-					<label>
-						City
-						<input type="text">
-					</label>
+					Birth Date <input type="date" name="birth_date">
 
-					<label>
-						Zip Code
-						<input type="text">
-					</label>
+					Gender
+					<select name="gender">
+						<option value="f" selected>Female</option>
+						<option value="m">Male</option>
+					</select><br>
 
-					<label>
-						Birth Date
-						<input type="date">
-					</label>
-
-					<label>
-						Gender
-						<select>
-							<option value="f" selected>Female</option>
-							<option value="m">Male</option>
-						</select>
-					</label>
-
-					<label>
-						Grade
-						<select>
-							<option value="pre_school">Pre-School</option>
-							<option value="first_grade">1st</option>
-							<option value="second_grade">2nd</option>
-							<option value="third_grade">3rd</option>
-							<option value="fourth_grade">4th</option>
-							<option value="fifth_grade">5th</option>
-						</select>
-					</label>
+					Grade
+					<select name="grade">
+						<option value="pre_school">Pre-School</option>
+						<option value="first_grade">1st</option>
+						<option value="second_grade">2nd</option>
+						<option value="third_grade">3rd</option>
+						<option value="fourth_grade">4th</option>
+						<option value="fifth_grade">5th</option>
+					</select>
 				</fieldset>
 
 				<fieldset>
-					<label>
-						Parent/Guardian
-						<input type="text">
-					</label>
+					Parent/Guardian <input type="text" name="guardian"><br>
 
-					<label>
-						Contact Phone
-						<input type="tel">
-					</label>
-					
-					<label>
-						Contact Email
-						<input type="email">
-					</label>
+					Contact Phone <input type="tel" name="contact_phone">
+					Contact Email <input type="email" name="contact_email">
 				</fieldset>
 
 				<fieldset>
-					<h2>Which elementary schools do you live near?</h2>
-					
-					<label>
-						First Closest School
-						<select>
-							<option value="aj_katzenmaier">AJ Katzenmaier</option>
-							<option value="greenbay">Greenbay</option>
-							<option value="howard_a_yeager">Howard A Yeager</option>
-							<option value="marjorie_p_hart">Marjorie P Hart</option>
-							<option value="north_elementary">North Elementary</option>
-							<option value="south_elementary">South Elementary</option>
-						</select>
-					</label>
+					<label>Which elementary schools do you live near?</label><br>
 
-					<label>
-						Second Closest School
-						<select>
-							<option value="aj_katzenmaier">AJ Katzenmaier</option>
-							<option value="greenbay">Greenbay</option>
-							<option value="howard_a_yeager">Howard A Yeager</option>
-							<option value="marjorie_p_hart">Marjorie P Hart</option>
-							<option value="north_elementary">North Elementary</option>
-							<option value="south_elementary">South Elementary</option>
-						</select>
-					</label>
+					<label>First Closest School</label>
+					<select name="first_closest_school">
+						<option value="aj_katzenmaier">AJ Katzenmaier</option>
+						<option value="greenbay">Greenbay</option>
+						<option value="howard_a_yeager">Howard A Yeager</option>
+						<option value="marjorie_p_hart">Marjorie P Hart</option>
+						<option value="north_elementary">North Elementary</option>
+						<option value="south_elementary">South Elementary</option>
+					</select><br>
+
+					<label>Second Closest School</label>
+					<select name="second_closest_school">
+						<option value="aj_katzenmaier">AJ Katzenmaier</option>
+						<option value="greenbay">Greenbay</option>
+						<option value="howard_a_yeager">Howard A Yeager</option>
+						<option value="marjorie_p_hart">Marjorie P Hart</option>
+						<option value="north_elementary">North Elementary</option>
+						<option value="south_elementary">South Elementary</option>
+					</select>
 				</fieldset>
 
 				<fieldset>
-					<label>
-						What position(s) do you normally play?
-						<select multiple>
-							<option value="forward">Forward</option>
-							<option value="defense">Defense</option>
-							<option value="midfield">Midfield</option>
-							<option value="goalkeeper">Goalkeeper</option>
-						</select>
-					</label>
-					
-					<label>
-						What position(s) do you want to play? 
-						<select multiple>
-							<option value="forward">Forward</option>
-							<option value="defense">Defense</option>
-							<option value="midfield">Midfield</option>
-							<option value="goalkeeper">Goalkeeper</option>
-						</select>
-					</label>
+					<label>What position(s) do you normally play?</label><br>
+					<input type="checkbox" name="positions_play" value="forward">Forward<br>
+					<input type="checkbox" name="positions_play" value="defense">Defense<br>
+					<input type="checkbox" name="positions_play" value="midfield">Midfield<br>
+					<input type="checkbox" name="positions_play" value="goalkeeper">Goalkeeper
 				</fieldset>
+
+				<fieldset>
+					<label>What position(s) do you want to play?</label><br>
+					<input type="checkbox" name="positions_wants" value="forward">Forward<br>
+					<input type="checkbox" name="positions_wants" value="defense">Defense<br>
+					<input type="checkbox" name="positions_wants" value="midfield">Midfield<br>
+					<input type="checkbox" name="positions_wants" value="goalkeeper">Goalkeeper
+				</fieldset>
+
+				<fieldset>
+					<input type="checkbox" name="has_uniform"> Already Have a Uniform<br>
+
+					<label>Jersey Size</label>
+					<select name="jersey_size">
+						<option value="youth_small">Youth Small</option>
+						<option value="youth_medium">Youth Medium</option>
+						<option value="youth_large">Youth Large</option>
+						<option value="Small">Small</option>
+						<option value="medium">Medium</option>
+						<option value="large">Large</option>
+						<option value="extra_large">Extra-Large</option>
+					</select><br>
+
+					<label>Shorts Size</label>
+					<select name="shots_size">
+						<option value="youth_small">Youth Small</option>
+						<option value="youth_medium">Youth Medium</option>
+						<option value="youth_large">Youth Large</option>
+						<option value="Small">Small</option>
+						<option value="medium">Medium</option>
+						<option value="large">Large</option>
+						<option value="extra_large">Extra-Large</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<label>Permission to Play</label>
+					<p>I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the rules of the Northside Youth Soccer League (NYSL). In recognizing the possibility of physical injury associated with soccer and in consideration for the “League” accepting the registrant for its soccer programs and activities, I hereby release, discharge, and/or otherwise indemnify NYSL, their employees and associated personnel and volunteers, including the facilities used for practices and games, against any claim by or on behalf of the registrant as a result of the registrant’s participation in the program and/or being transported to or from NYSL sponsored activities, which transportation.</p>
+					<p>By entering your name below, I hereby agree and authorize the above. In addition, by signing below, I also acknowledge that I have read the cancellation policy and agree to its terms.</p>
+
+					Parent/Guardian <input type="text" name="guardian_signature">
+					Date <input type="date" name="date_signed">
+				</fieldset>
+				
+				<input type="submit" value="SUBMIT">
 			</form>
 		</article>
 	</section>
