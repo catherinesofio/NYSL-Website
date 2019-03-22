@@ -1,15 +1,28 @@
 html,
 body {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
   width: 100%;
   height: 100%;
+  
   margin: 0;
   padding: 0;
 
-  background-color: darkolivegreen;
-  background-image: linear-gradient(to bottom, greenyellow, darkolivegreen);
-  background-repeat: no-repeat;
-
   font-family: sans-serif;
+  
+  background-color: black;/*forestgreen;
+  background-image: linear-gradient(to bottom, greenyellow, forestgreen);*/
+  background-repeat: no-repeat;
+}
+
+body {
+  
+  width: 100%;
+  height: 100%;
+  
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 header {
@@ -17,7 +30,7 @@ header {
   box-sizing: border-box;
 
   width: 100%;
-  height: 35%;
+  height: 50%;
 
   background-image: url("../assets/design1_image1.jpg");
   background-repeat: no-repeat;
@@ -27,36 +40,42 @@ header {
   border-bottom-width: 5px;
   border-style: solid;
   border-color: whitesmoke;
+  
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+}
+
+#slide_transition {
+  display: none;
+  width: 100%;
+  height: 100%;
+  
+  background-color: white;
 }
 
 header h1 {
   position: relative;
-  top: 85%;
+  top: 91%;
 
   margin: 0;
   padding-left: 10px;
 
   color: white;
-  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-h2 {
-  display: none;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 nav {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   display: block;
 
-  width: 100%;
-
+  width: 80%;
+  
   position: fixed;
-
-  top: 0;
-  right: 0;
+  top: 25px;
 
   background-color: rgba(0, 0, 0, 0.5);
-	
-	z-index: 1;
+
+  z-index: 1;
 }
 
 nav ul {
@@ -96,11 +115,11 @@ nav a.current:hover {
 .logo {
   position: fixed;
 
-  left: 5px;
+  left: 11%;
   top: 5px;
 
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 
   background-image: url("../assets/nysl_logo.png");
   background-repeat: no-repeat;
@@ -143,12 +162,48 @@ nav a.current:hover {
 section {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-
   display: inline-block;
+  
+  float: left;
+  clear: left;
+  
+  border-width: 2px;
+  border-style: solid;
+  border-collapse: collapse;
+  border-color: rgba(0, 0, 0, 1);
+}
 
-  width: 100%;
+section h2 {
+  position: absolute;
+  margin: 20px;
+}
 
-  padding: 1.5%;
+.events {
+  width: 25%;
+  height: 50%;
+  
+  float: right;
+  clear: right;
+}
+
+.about {
+  display: inline-flex;
+  
+  width: 75%;
+  height: 40%;
+}
+
+.contact {
+  width: 75%;
+  height: 10%;
+}
+
+.about article {
+  width: 45%;
+}
+
+.about article, section article:first-of-type {
+  margin-top: 50px;
 }
 
 article {
@@ -158,73 +213,75 @@ article {
   padding: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 10px;
 
   background-color: whitesmoke;
 
+  border-radius: 5px;
+  
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-table {
+table,
+table caption {
   border-collapse: collapse;
 
-	filter: drop-shadow(0px 0px 2.5px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 0px 2.5px rgba(0, 0, 0, 0.25));
 }
 
-th {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	
-	padding: 5px;
+th,
+table caption {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 
-	text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-	text-align: center;
-	
-	color: white;
-	background-color: forestgreen;
-	
-	border-color: black;
-	border-style: solid;
-	border-width: 0;
-	border-bottom-width: 2.5px;
+  padding: 5px;
+
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  color: white;
+  background-color: forestgreen;
+
+  border-color: black;
+  border-style: solid;
+  border-width: 0;
+  border-bottom-width: 2.5px;
 }
 
-th:first-child {
-	border-top-left-radius: 5px;
-	
-	background-image: linear-gradient(to right, green, forestgreen);
+th:first-child,
+table caption {
+  border-top-left-radius: 5px;
+
+  background-image: linear-gradient(to right, green, forestgreen);
 }
 
-th:last-child {
+th:last-child,
+table caption {
   border-top-right-radius: 5px;
-	
-	background-image: linear-gradient(to right, forestgreen, green);
+
+  background-image: linear-gradient(to right, forestgreen, green);
 }
 
 tr {
-	text-align: center;
-	
-	background-color: white;
+  text-align: center;
+
+  background-color: white;
 }
 
-tr:nth-child(2n + 1)
-{
-	background-color: rgb(235, 235, 235);
+tr:nth-child(2n + 1) {
+  background-color: rgb(235, 235, 235);
 }
 
 td {
-	padding: 5px;
+  padding: 5px;
 }
 
 table :lastchild > td:first-child {
-	border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 table :last-child > td:last-child {
-	border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .sideBySide {
