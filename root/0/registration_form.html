@@ -4,16 +4,15 @@
 
 <head>
 	<meta charset="utf-8">
-	<link rel=stylesheet href="styles/nysl_3.css">
+	<link rel=stylesheet href="styles/reset.css">
 	<title>Northside Youth Soccer League</title>
 </head>
 
 <body>
-	<header>
-		<h1>Northside Youth Soccer League</h1>
+	<header id="slideshow">
+      <div id="slide_transition"></div>
+      <h1>Northside Youth Soccer League</h1>
 	</header>
-
-	<h2>Registration Form</h2>
 
 	<nav>
 		<ul>
@@ -30,16 +29,21 @@
 
 	<section>
 		<article>
+        <h2>REGISTRATION FORM</h2>
 			<form action="../root/show_data.html" method="get">
 				<fieldset>
 					Player’s First Name <input type="text" name="first_name">
 					Last Name <input type="t" name="last_name"><br>
+                </fieldset>
 
-					Street Address <input type="text" name="street_address"><br>
+				<fieldset>
+                    Street Address <input type="text" name="street_address"><br>
 
 					City <input type="text" name="city">
 					Zip Code <input type="text" name="zip_code"><br>
-
+                </fieldset>
+                
+                <fieldset>
 					Birth Date <input type="date" name="birth_date">
 
 					Gender
@@ -145,6 +149,13 @@
 			</form>
 		</article>
 	</section>
+
+  <footer>
+    <p id="credits">Made by <a href="https://www.linkedin.com/in/catalina-sofio-avogadro/">Catherine Sofio</a>.</p>
+  </footer>
+  
+  <script src="data/slideshow_data.js"></script>
+  <script src="scripts/slideshow.js"></script>
 </body>
 
 </html>

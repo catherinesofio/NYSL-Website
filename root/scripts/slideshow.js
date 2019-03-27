@@ -1,24 +1,62 @@
-var images = [];
-images[0] = 'assets/design1_image1.jpg';
-images[1] = 'assets/design2_image1.jpg';
+let curr = 0;
+let next = 1;
+let speed = 1500;
+let images = [];
 
-var i = 0;
-var time = 3000;
+CreateSlideshow();
+ChangeSlide();
 
-window.onload = slideImg;
+function CreateSlideshow() {
+  let container = document.getElementById('slideshow');
+  let srcs = slideshowData.data;
 
-function transition() {
-  
+  for (var i = 0; i < srcs.length; i++) {
+    images.push(CreateImg(srcs[i], container, 'slide'));
+    images[i].style.opacity = 0.0;
+  }
 }
 
-function slideImg() {
+function ChangeSlide() {
+  images[curr].style.opacity = 0.0;
   
-  document.getElementById("slideshow").style.backgroundImage='url('+images[i]+')';
+  curr = next;
+  
+  if (next < images.length - 1) {
+    next++;
+  } else {
+    next = 0;
+  }
+  
+  images[curr].style.opacity = 1.0;
+  images[next].style.opacity = 0.0;
 
-  if (i < images.length - 1)
-    i++;
-  else
-    i = 0;
+  setTimeout(TriggerTransition, speed);
+}
 
-  setTimeout(slideImg,time);
+function TriggerTransition() {
+  FadeOut();
+  FadeIn();
+}
+
+function FadeOut() {
+  let e = images[curr];
+  e.style.opacity -= 0.1;
+  
+  if (e.style.opacity < 0.0) {
+    e.style.opacity = 0.0;
+  } else {
+    setTimeout(FadeOut, 100);
+  }
+}
+
+function FadeIn() {
+  let e = images[next];
+  e.style.opacity += 0.1;
+  
+  if (e.style.opacity > 1.0) {
+    e.style.opacity = 1.0;
+    ChangeSlide();
+  } else {
+    setTimeout(FadeIn, 100);
+  }
 }
