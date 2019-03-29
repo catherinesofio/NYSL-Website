@@ -34,7 +34,7 @@ body {
   width: 100%;
   height: 100%;
   
-  position: absolute;
+  position: fixed;
   
   background-image: url('../assets/background_pattern.png');
   background-repeat: repeat;
@@ -191,11 +191,13 @@ header {
 .flex-box {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  display: flex;
+  display: inline-flex;
   
   width: 100%;
+  height: auto;
   
   margin: 0 auto;
+  margin-bottom: 4em;
   padding: 0em;
   padding-left: 5em;
   padding-right: 5em;
@@ -209,10 +211,9 @@ section {
   display: inline-block;
   
   width: 95%;
+  height: auto;
   
   position: relative;
-  
-  height: 24em;
 }
 
 article {
@@ -294,12 +295,22 @@ aside h2 {
   box-shadow: var(--box-shadow-settings);
 }
 
-#events {
+#events, #game-locations {
   height: 14em;
   
   position: relative;
   
   overflow-y: scroll;
+}
+
+#game-locations {
+  height: inherit;
+  
+  overflow: visible;
+}
+
+#game-locations table {
+  box-shadow: var(--box-shadow-settings);
 }
 
 #events::-webkit-scrollbar {
@@ -336,7 +347,7 @@ aside h2 {
   box-shadow: var(--box-shadow-settings);
 }
 
-.event time {
+.event time, span, label {
   font-weight: bold;
 }
 
@@ -359,6 +370,89 @@ li {
   list-style: none;
 }
 
+table,
+table caption {
+  border-collapse: collapse;
+}
+
+table {
+  margin: 0em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+th,
+table caption {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  padding: 0.5em;
+  
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  color: white;
+  background-color: forestgreen;
+
+  border-color: black;
+  border-style: solid;
+  border-width: 0;
+  border-bottom-width: 2.5px;
+}
+
+th:first-child,
+table caption {
+  border-top-left-radius: 5px;
+
+  background-image: linear-gradient(to right, green, forestgreen);
+}
+
+th:last-child,
+table caption {
+  border-top-right-radius: 5px;
+
+  background-image: linear-gradient(to right, forestgreen, green);
+}
+
+tr {
+  text-align: center;
+
+  background-color: white;
+}
+
+tr:nth-child(2n + 1) {
+  background-color: rgb(235, 235, 235);
+}
+
+td {
+  padding: 0.25em;
+}
+
+fieldset {
+  border-width: 0em;
+  border-bottom-width: 0.25em;
+  border-style: solid;
+  border-color: var(--details-color-a);
+
+}
+
+input[type=submit] {
+  font-family: inherit;
+  font-size: 1em;
+  
+  color: white;
+  
+  background-color: var(--links-color);
+  
+  border-radius: 5px;
+  
+  box-shadow: var(--box-shadow-settings);
+}
+
+input[type=submit]:hover {
+  background-color: var(--links-hover-color);
+}
+
 footer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -367,11 +461,10 @@ footer {
   width: 100%;
 
   margin: 0em;
-  margin-top: 1em;
   padding: 0.1em;
 
-  position: absolute;
-  bottom: 0%;
+  position: fixed;
+  bottom: 0;
 
   background-color: var(--footer-background);
 

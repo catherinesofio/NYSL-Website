@@ -28,7 +28,9 @@ function HideContent(e) {
     mouseTarget = null;
   }
 
-  setTimeout(function(){HideContentDelay(e.target.nextElementSibling);}, 1);
+  setTimeout(function () {
+    HideContentDelay(e.target.nextElementSibling);
+  }, 1);
 }
 
 function HideContentDelay(cont) {

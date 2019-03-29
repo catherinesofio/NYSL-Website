@@ -14,7 +14,7 @@ function CreateSlideshow() {
     images[i].style.opacity = 0.0;
   }
   images[curr].style.opacity = 1.0;
-  
+
   setTimeout(TriggerTransition, speed);
 }
 
@@ -26,7 +26,7 @@ function TriggerTransition() {
 function FadeOut() {
   let e = images[curr];
   e.style.opacity = parseFloat(e.style.opacity) - 0.1;
-  
+
   if (e.style.opacity < 0.0) {
     e.style.opacity = 0.0;
   }
@@ -35,7 +35,7 @@ function FadeOut() {
 function FadeIn() {
   let e = images[next];
   e.style.opacity = parseFloat(e.style.opacity) + 0.1;
-  
+
   if (e.style.opacity > 1.0) {
     e.style.opacity = 1.0;
     ChangeSlide();
@@ -46,7 +46,7 @@ function FadeIn() {
 
 function ChangeSlide() {
   curr = next;
-  next= (next +1)%(images.length);
-  
+  next = (next + 1) % (images.length);
+
   setTimeout(TriggerTransition, speed);
 }
