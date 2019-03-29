@@ -1,11 +1,13 @@
 :root {
   --slide-transition-speed: 1s;
   --links-color: green;
+  --links-hover-color: yellowgreen;
   --details-color-a: yellowgreen;
   --details-color-b: green;
   --nav-background: ghostwhite;
   --body-background: forestgreen;
   --footer-background: ghostwhite;
+  --symbol-soccer-ball: "\26BD";
   --text-shadow-settings: 0em 0.05em 0.025em rgba(0, 0, 0, 0.25);
   --box-shadow-settings: 0em 0em 0.25em rgba(0, 0, 0, 0.5);
 }
@@ -43,12 +45,16 @@ body {
 }
 
 nav {
-  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-flex;
 
   width: 100%;
-
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  
   position: sticky;
-  top: 0vw;
+  top: 0em;
 
   background-color: var(--nav-background);
 
@@ -57,28 +63,33 @@ nav {
   border-style: solid;
   border-color: var(--details-color-b);
 
+  justify-content: space-between;
+  
   z-index: 1;
 }
 
 nav ul {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   display: inline-flex;
   flex-direction: row;
-
-  margin: 0vw;
-  padding: 0vw;
+  
+  margin: 0em;
+  padding: 0em;
 }
 
 nav li {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-
+  display: inline;
+  
   padding: 0.5em;
-  padding-right: 5em;
+  padding-left: 1em;
 
   list-style: none;
 }
 
-nav a {
+nav a, nav h1 {
   text-decoration: none;
   text-shadow: var(--text-shadow-settings);
 
@@ -88,6 +99,16 @@ nav a {
   color: black;
 }
 
+nav h1::before {
+  content: var(--symbol-soccer-ball);
+}
+
+nav h1 {
+  margin: 0em;
+  padding: 0em;
+  padding-top: 0.35em;
+}
+
 #current {
   color: var(--links-color);
 }
@@ -95,36 +116,51 @@ nav a {
 nav .collapsible {
   box-sizing: border-box;
   display: inline-block;
+  
+  width: 5em;
+  
+  text-align: right;
 }
 
 nav .content {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
-
-  margin: 0em;
-  padding: 0em;
-
+  
   position: absolute;
-
-  background-color: aliceblue;
-
+  
+  background-color: var(--nav-background);
+  
   border-width: 0em;
   border-bottom-width: 0.25em;
   border-style: solid;
   border-color: var(--details-color-b);
-
+  
+  text-align: right;
+  
   z-index: 2;
 }
 
+nav .content li {
+  display: block;
+  
+  margin-right: 0em;
+  padding: 0em;
+  padding-left: 1em;
+  padding-right: 1em;
+  
+  font-size: 0.90em;
+}
+
 .content a:hover {
-  background-color: aquamarine;
+  color: var(--links-hover-color);
 }
 
 header {
   display: block;
 
   width: 100%;
-  height: 25vw;
+  height: 20em;
 
   position: relative;
 
@@ -139,7 +175,7 @@ header {
 }
 
 .slideshow {
-  position: absolute;
+  position: relative;
 
   overflow: hidden;
 }
@@ -149,15 +185,22 @@ header {
 
   position: absolute;
 
-  align-self: center;
+  margin: 0em auto;
 }
 
 .flex-box {
-  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
   
-  width: 70%;
+  width: 100%;
   
-  text-align: center;
+  margin: 0 auto;
+  padding: 0em;
+  padding-left: 5em;
+  padding-right: 5em;
+  
+  justify-content: center;
 }
 
 section {
@@ -165,7 +208,54 @@ section {
   box-sizing: border-box;
   display: inline-block;
   
-  width: 75%;
+  width: 95%;
+  
+  position: relative;
+  
+  height: 24em;
+}
+
+article {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  display: block;
+  
+  background-color: var(--footer-background);
+  
+  border-width: 0em;
+  border-bottom-width: 0.25em;
+  border-style: solid;
+  border-color: var(--details-color-b);
+  
+}
+
+article li::before {
+  content: var(--symbol-soccer-ball);
+}
+
+a {
+  color: var(--links-color);
+}
+
+a:hover {
+  color: var(--links-hover-color);
+}
+
+article, aside {
+  margin: 1em;
+  padding: 1em;
+  padding-top: 0.25em;
+  
+  text-align: justify;
+  
+  box-shadow: var(--box-shadow-settings);
+}
+
+article a, aside a {
+  font-weight: bold;
+  
+  text-decoration: none;
 }
 
 aside {
@@ -173,24 +263,26 @@ aside {
   box-sizing: border-box;
   display: inline-block;
   
-  width: 25%;
+  height: 24em;
   
-  position: absolute;
+  position: relative;
+  
+  border-width: 0.25em;
+  border-style: solid;
+  border-color: var(--details-color-b);
+  
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
-article {
-  display: block;
-  
-  text-align: justify;
-}
-
-article, aside {
+aside h2 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   
-  margin: 1em;
-  padding: 1em;
-  padding-top: 0.25em;
+  padding: 0em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  
+  text-align: center;
   
   background-color: var(--footer-background);
   
@@ -202,10 +294,50 @@ article, aside {
   box-shadow: var(--box-shadow-settings);
 }
 
-article a, aside a {
-  font-weight: bold;
+#events {
+  height: 14em;
   
-  text-decoration: none;
+  position: relative;
+  
+  overflow-y: scroll;
+}
+
+#events::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+#events::-webkit-scrollbar-track {
+  background-color: var(--footer-background); 
+}
+
+#events::-webkit-scrollbar-thumb {
+  background-color: var(--details-color-b); 
+}
+
+#events::-webkit-scrollbar-thumb:hover {
+  background-color: var(--details-color-a); 
+}
+
+.event {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  
+  width: 90%;
+  
+  margin: 0 auto;
+  margin-bottom: 1em;
+  padding: 1em;
+  
+  color: black;
+  
+  background-color: var(--footer-background);
+  
+  box-shadow: var(--box-shadow-settings);
+}
+
+.event time {
+  font-weight: bold;
 }
 
 ul{
@@ -228,15 +360,17 @@ li {
 }
 
 footer {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
 
   width: 100%;
 
   margin: 0em;
+  margin-top: 1em;
   padding: 0.1em;
 
-  position: fixed;
+  position: absolute;
   bottom: 0%;
 
   background-color: var(--footer-background);

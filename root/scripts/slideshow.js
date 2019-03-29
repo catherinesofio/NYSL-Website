@@ -1,10 +1,9 @@
-let curr = 0;
-let next = 1;
-let speed = 1500;
-let images = [];
+var curr = 0;
+var next = 1;
+var speed = 3000;
+var images = [];
 
 CreateSlideshow();
-ChangeSlide();
 
 function CreateSlideshow() {
   let container = document.getElementById('slideshow');
@@ -14,22 +13,8 @@ function CreateSlideshow() {
     images.push(CreateImg(srcs[i], container, 'slide'));
     images[i].style.opacity = 0.0;
   }
-}
-
-function ChangeSlide() {
-  images[curr].style.opacity = 0.0;
-  
-  curr = next;
-  
-  if (next < images.length - 1) {
-    next++;
-  } else {
-    next = 0;
-  }
-  
   images[curr].style.opacity = 1.0;
-  images[next].style.opacity = 0.0;
-
+  
   setTimeout(TriggerTransition, speed);
 }
 
@@ -40,23 +25,28 @@ function TriggerTransition() {
 
 function FadeOut() {
   let e = images[curr];
-  e.style.opacity -= 0.1;
+  e.style.opacity = parseFloat(e.style.opacity) - 0.1;
   
   if (e.style.opacity < 0.0) {
     e.style.opacity = 0.0;
-  } else {
-    setTimeout(FadeOut, 100);
   }
 }
 
 function FadeIn() {
   let e = images[next];
-  e.style.opacity += 0.1;
+  e.style.opacity = parseFloat(e.style.opacity) + 0.1;
   
   if (e.style.opacity > 1.0) {
     e.style.opacity = 1.0;
     ChangeSlide();
   } else {
-    setTimeout(FadeIn, 100);
+    setTimeout(TriggerTransition, 50);
   }
+}
+
+function ChangeSlide() {
+  curr = next;
+  next= (next +1)%(images.length);
+  
+  setTimeout(TriggerTransition, speed);
 }

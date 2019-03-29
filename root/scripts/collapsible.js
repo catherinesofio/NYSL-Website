@@ -1,22 +1,52 @@
-let collapsibles = document.getElementsByClassName('collapsible');
+let mouseTarget = null;
 
-AddCollapsibleEvent();
+AddEvents();
 
-function AddCollapsibleEvent() {
+function AddEvents() {
+  let cont = null;
+  let collapsibles = document.getElementsByClassName('collapsible');
+
   for (i = 0; i < collapsibles.length; i++) {
-    collapsibles[i].addEventListener('mouseover', ToggleCollapsible);
-    collapsibles[i].addEventListener('mouseout', ToggleCollapsible);
-    collapsibles[i].nextElementSibling.style.display = 'none';
+    cont = collapsibles[i].nextElementSibling;
+    cont.style.display = 'none';
+
+    collapsibles[i].addEventListener('mouseenter', ShowContent);
+    collapsibles[i].addEventListener('mouseleave', HideContent);
+    cont.addEventListener('mouseenter', ShowSelf);
+    cont.addEventListener('mouseleave', HideSelf);
   }
 }
 
-function ToggleCollapsible() {
-  let content = this.nextElementSibling;
-  let collapsible = content.previousSibling;
+function ShowContent(e) {
+  e.target.nextElementSibling.style.display = 'block';
 
-  if (content.style.display === 'none') {
-    content.style.display = 'block';
-  } else {
-    content.style.display = 'none';
+  mouseTarget = e.target;
+}
+
+function HideContent(e) {
+  if (mouseTarget === e.target) {
+    mouseTarget = null;
+  }
+
+  setTimeout(function(){HideContentDelay(e.target.nextElementSibling);}, 1);
+}
+
+function HideContentDelay(cont) {
+  if (mouseTarget !== cont) {
+    cont.style.display = 'none';
+  }
+}
+
+function ShowSelf(e) {
+  mouseTarget = e.target;
+}
+
+function HideSelf(e) {
+  if (mouseTarget === e.target) {
+    mouseTarget = null;
+  }
+
+  if (mouseTarget !== e.target.previousElementSibling) {
+    e.target.style.display = 'none';
   }
 }
