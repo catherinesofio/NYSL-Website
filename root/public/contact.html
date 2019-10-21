@@ -14,17 +14,17 @@
       <h1> Northside Youth Soccer League</h1>
       <ul>
         <li>
-          <a href="#" class="collapsible">NYSL</a>
+          <a href="#" id="current" class="collapsible">NYSL</a>
           <ul class="content">
             <li><a href="index.html" >HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="#" id="current">CONTACT</a></li>
           </ul>
         </li>
         <li>
-          <a href="#" id="current" class="collapsible">GAMES</a>
+          <a href="#" class="collapsible">GAMES</a>
           <ul class="content">
-            <li><a href="game_info.html" id="current">INFO</a></li>
+            <li><a href="game_info.html">INFO</a></li>
             <li><a href="register.html">REGISTER</a></li>
           </ul>
         </li>
@@ -38,22 +38,12 @@
     <div class="flex-box">
       <section>
         <article>
-          <h2>Fall Schedule</h2>
-          <p>All games take place on <span>Saturday</span>.</p>
-          
-          <div id="game-schedules"></div>
-          
-          <ul>
-            <li><span> Facility Type:</span> Outdoor.</li>
-            <li><span>Additional Information:</span>If deemed necessary by NYSL, games may be shortened or cancelled due to extreme weather conditions.</li>
-            <li><span> Please direct all questions to:</span> Michael Randall, League Coordinator.</li>
-            <li><span> Phone:</span> (630) 690-8132.</li>
-            <li><span> Email:</span> <a href="mailto:michael.randall@chisoccer.org">michael.randall@chisoccer.org</a>.</li>
-          </ul>
+          <h2>CONTACT</h2>
+          <p><span>Please email us at:</span> <a href="mailto:nysl@chisoccer.org">nysl@chisoccer.org</a>.</p>
+
+          <p>We will reply to your email as soon as we can.</p>
         </article>
       </section>
-      
-      <div id="game-locations"></div>
     </div>
     
     <footer>
@@ -61,10 +51,11 @@
     </footer>
     
     <script src="data/slideshow_data.js"></script>
-    <script src="data/events_data.js"></script>
     <script src="scripts/utils.js"></script>
     <script src="scripts/collapsible.js"></script>
     <script src="scripts/slideshow.js"></script>
-    <script src="scripts/game_info.js"></script>
+    <script src="/__/firebase/7.2.1/firebase-app.js"></script>
+    <script src="/__/firebase/7.2.1/firebase-analytics.js"></script>
+    <script src="/__/firebase/init.js"></script>
   </body>
 </html>
