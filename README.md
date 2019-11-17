@@ -1,9 +1,9 @@
 # MindHub-Course01
 Module 01: Introduction to Website Development <br>
-[Project 02](https://github.com/catherinesofio/MindHub-Course02) -
-[Project 03](https://github.com/catherinesofio/MindHub-Course03) -
-[Project 04](https://github.com/catherinesofio/MindHub-Course04) -
-[Project 05](https://github.com/catherinesofio/MindHub-Course05)
+[Module 02](https://github.com/catherinesofio/MindHub-Course02) -
+[Module 03](https://github.com/catherinesofio/MindHub-Course03) -
+[Module 04](https://github.com/catherinesofio/MindHub-Course04) -
+[Module 05](https://github.com/catherinesofio/MindHub-Course05)
 
 The goal was to create a web page for the "Northside Youth Soccer League" that meet with the needs and wants of Tom Denton, the league's director.
 
